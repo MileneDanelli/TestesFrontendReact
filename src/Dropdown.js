@@ -1,12 +1,12 @@
-import React from 'react';
+import React from 'react'
 
 export const Dropdown = ({title, options, onSelect}) => {
     
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = React.useState(false)
 
     const handleSelection = (option) => {
-        onSelect(option);
-        setIsOpen(false);
+        onSelect(option)
+        setIsOpen(false)
     };
 
     return (

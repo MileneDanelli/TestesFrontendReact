@@ -1,5 +1,6 @@
 import React from "react";
 import { Dropdown } from "./Dropdown";
+import Todo from "./Todo";
 
 function App() {
   const [selectedAnime, setSelectedAnime] = React.useState(null);
@@ -13,6 +14,8 @@ function App() {
         options={['SAO', 'Mirai Nikki', 'Akame Ga Kill']} 
         onSelect={setSelectedAnime} 
       />
+
+      <Todo />
     </div>
   );
 }
