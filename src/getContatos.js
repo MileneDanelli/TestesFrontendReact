@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-function getAnimes() {
-    axios.get('http://localhost:8080/animes')
+function getContatos() {
+    axios.get('http://localhost:8080/contatos')
     .then(response => console.log(response.data))
     .catch(error => console.log(error))
 }
 
-module.exports = {getAnimes}
+module.exports = {getContatos}

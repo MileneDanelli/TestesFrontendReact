@@ -6,9 +6,9 @@ const AddContatoForm = props => {
     const [contato, setContato] = useState(initialFormState);
 
     const handleInputChange = event => {
-        const {nome, value} = event.target;
+        const {name, value} = event.target;
 
-        setContato({ ...contato, [nome]: value });
+        setContato({ ...contato, [name]: value });
     }
 
     const submitForm = event => {

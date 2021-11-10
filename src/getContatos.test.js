@@ -8,13 +8,13 @@ describe("mock api calls", () => {
     });
 
     test("mocking external endpoint in axios", () => {
-        const mockedResponse = {data: {nome:'SAO', descricao:'Fantasia.'}}
+        const mockedResponse = {data: {nome:'Mi', email:'mi@outlook.com', telefone:'23423434'}}
         axios.get.mockResolvedValue(mockedResponse)
-        const getAnimes = require('./getAnimes')
+        const getC = require('./getContatos')
     
-        getAnimes.getAnimes()
+        getC.getContatos()
 
         expect(axios.get).toHaveBeenCalled()
-        expect(axios.get).toHaveBeenCalledWith('http://localhost:8080/animes')
+        expect(axios.get).toHaveBeenCalledWith('http://localhost:8080/contatos')
     })
 })

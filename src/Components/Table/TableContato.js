@@ -12,7 +12,7 @@ const TableContato = props => (
         </thead>
     <tbody>
         {
-            props.contatos.length > 0 ? (
+            props.contatos && props.contatos.length > 0 ? (
                 props.contatos.map (contato => (
 
                     <tr key={contato.id}>
@@ -28,7 +28,7 @@ const TableContato = props => (
 
                             <button 
                                 className="waves-effect waves-light btn-small red darken-4"
-                                onClick={() => props.deletecontato(contato.id)}>
+                                onClick={() => props.deleteContato(contato.id)}>
                                 delete
                             </button>
                         </td> 
@@ -36,7 +36,7 @@ const TableContato = props => (
                     ))
                 ) : (
                     <tr>
-                        <td colSpan={3}>{props.contatos[0]} Nao ha contatos</td>
+                        <td colSpan={3}>{props.contatos && props.contatos[0]} Nao ha contatos</td>
                     </tr>
                 )
         }          

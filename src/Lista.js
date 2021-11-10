@@ -24,20 +24,20 @@ class Lista extends Component {
     }
 
     refreshContatoTable() {
-        this.contatosData = api.get('contatos', {headers: {'Access-Control-Allow-Origin' : '*'}})
+        this.contatosData = api.get('contatos')
             .then(response => response.data)
             .then(data => {
 
                 this.setState({ 
-                    contatos: data.data,
-                    setContatos: data.data
+                    contatos: data,
+                    setContatos: data,
                 });
             });
     }
 
     addContato = contato => {
 
-        api.post('contatos', qs.stringify(contato), {headers: {'Access-Control-Allow-Origin' : '*'}})
+        api.post('contatos', qs.stringify(contato))
             .then(res => {
                 this.refreshContatoTable();
             });
@@ -45,7 +45,7 @@ class Lista extends Component {
 
     deleteContato = id => {
 
-        api.delete(`contatos/${id}`, {headers: {'Access-Control-Allow-Origin' : '*'}})
+        api.delete(`contatos/${id}`)
             .then(res => {
                 this.refreshContatoTable();
             });
@@ -53,9 +53,8 @@ class Lista extends Component {
 
     updateContato = (id, contato) => {
         
-        api.put(`contatos/${id}`, qs.stringify(contato), {headers: {'Access-Control-Allow-Origin' : '*'}})
+        api.put(`contatos/${id}`, qs.stringify(contato))
             .then(res => {
-
                 this.refreshContatoTable();
             });
         
@@ -101,7 +100,7 @@ class Lista extends Component {
                             </div>
                         ) : (
                             <div className="col s12 l6">
-                                <h4>Add Contato</h4>
+                                <h4>Cadastrar Contato</h4>
                                 <AddContatoForm addContato={this.addContato} />
                             </div>
                         )
