@@ -8,7 +8,6 @@ import AddContatoForm from './Components/Forms/AddContatoForm';
 import EditContatoForm from './Components/Forms/EditContatoForm';
 
 class Lista extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +25,6 @@ class Lista extends Component {
         this.contatosData = api.get('contatos')
             .then(response => response.data)
             .then(data => {
-
                 this.setState({ 
                     contatos: data,
                     setContatos: data,
@@ -74,6 +72,7 @@ class Lista extends Component {
         const { contatos } = this.state;
         return (
             <div className="container">
+                <h3 id="title">Contatos</h3>
                 <div className="row">
                     {
                         this.state.editing ? (

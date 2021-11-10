@@ -58,7 +58,7 @@ const AddContatoForm = props => {
                 
                 <div className="row">
                     <div className="input-field col s12">
-                        <button className="waves-effect waves-light btn cyan lighten-2">Cadastrar</button>
+                        <button id="btn-cadastrar" className="waves-effect waves-light btn cyan lighten-2">Cadastrar</button>
                     </div>
                 </div>
             </form>
