@@ -11,7 +11,6 @@ class Lista extends Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             contatos: [],
             currentContato: { id: null, nome: '', email: '', telefone: '' },
@@ -36,7 +35,6 @@ class Lista extends Component {
     }
 
     addContato = contato => {
-
         api.post('contatos', qs.stringify(contato))
             .then(res => {
                 this.refreshContatoTable();
@@ -44,7 +42,6 @@ class Lista extends Component {
     };
 
     deleteContato = id => {
-
         api.delete(`contatos/${id}`)
             .then(res => {
                 this.refreshContatoTable();
@@ -52,41 +49,32 @@ class Lista extends Component {
     };
 
     updateContato = (id, contato) => {
-        
         api.put(`contatos/${id}`, qs.stringify(contato))
             .then(res => {
                 this.refreshContatoTable();
             });
-        
         this.setState({ 
             currentContato: { id: null, nome: '', email: '', telefone: '' }
         });
-
         this.setEditing(false);
     };
 
     editRow = contato => {
-
         this.setState({ 
             currentContato: { id: contato.id, nome: contato.nome, email: contato.email, telefone: contato.telefone }
         });
-
         this.setEditing(true);
     };
 
     setEditing = isEditing => {
-
         this.setState({ editing: isEditing });
     };
 
     render () {
         const { contatos } = this.state;
-
         return (
             <div className="container">
-                    
                 <div className="row">
-    
                     {
                         this.state.editing ? (
                             <div className="col s12 l6">

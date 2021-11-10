@@ -2,7 +2,7 @@ import React from 'react';
 
 const TableContato = props => (
   
-    <table className="responsive-table">
+    <table className="responsive-table striped">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -21,22 +21,22 @@ const TableContato = props => (
                         <td>{contato.telefone}</td>
                         <td className="center-align">
                             <button 
-                                className="waves-effect waves-light btn-small"
+                                className="waves-effect waves-light btn-small cyan lighten-2"
                                 onClick={() => props.editRow(contato)}>
-                                edit
+                                Editar
                             </button>
 
                             <button 
-                                className="waves-effect waves-light btn-small red darken-4"
+                                className="waves-effect waves-light btn-small red pink accent-1"
                                 onClick={() => props.deleteContato(contato.id)}>
-                                delete
+                                Deletar
                             </button>
                         </td> 
                     </tr>
                     ))
                 ) : (
                     <tr>
-                        <td colSpan={3}>{props.contatos && props.contatos[0]} Nao ha contatos</td>
+                        <td colSpan={3}>{props.contatos && props.contatos[0]} Não há Contatos.</td>
                     </tr>
                 )
         }          

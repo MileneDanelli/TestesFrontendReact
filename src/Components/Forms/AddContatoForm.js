@@ -1,28 +1,23 @@
 import React, { useState } from 'react';
 
 const AddContatoForm = props => {
-
     const initialFormState = { nome: '', email: '', telefone: ''};
     const [contato, setContato] = useState(initialFormState);
 
     const handleInputChange = event => {
         const {name, value} = event.target;
-
         setContato({ ...contato, [name]: value });
     }
 
     const submitForm = event => {
         event.preventDefault();
-
         if (!contato.nome || !contato.email || !contato.telefone) return;
-
         props.addContato(contato);
         setContato(initialFormState);
     };
 
     return (
         <div className="row">
-
             <form className="col s12"
                 onSubmit={submitForm}>
                <div className="row">
@@ -33,7 +28,7 @@ const AddContatoForm = props => {
                             value={contato.nome}
                             onChange={handleInputChange} 
                             required />
-                        <label htmlFor="nome"></label>
+                        <label htmlFor="nome">Nome:</label>
                     </div>
                 </div>
 
@@ -45,7 +40,7 @@ const AddContatoForm = props => {
                             value={contato.email}
                             onChange={handleInputChange} 
                             required />
-                        <label htmlFor="email"></label>
+                        <label htmlFor="email">Email:</label>
                     </div>
                 </div>
 
@@ -57,14 +52,13 @@ const AddContatoForm = props => {
                             value={contato.telefone}
                             onChange={handleInputChange} 
                             required />
-                        <label htmlFor="telefone"></label>
+                        <label htmlFor="telefone">Telefone:</label>
                     </div>
                 </div>
                 
                 <div className="row">
                     <div className="input-field col s12">
-
-                        <button className="waves-effect waves-light btn">Cadastrar</button>
+                        <button className="waves-effect waves-light btn cyan lighten-2">Cadastrar</button>
                     </div>
                 </div>
             </form>
