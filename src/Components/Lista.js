@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import qs from 'querystring';
 
-import api from './api';
+import api from '../api';
 
-import TableContato from './Components/Table/TableContato';
-import AddContatoForm from './Components/Forms/AddContatoForm';
-import EditContatoForm from './Components/Forms/EditContatoForm';
+import TableContato from './TableContato';
+import AddContatoForm from './Forms/AddContatoForm';
+import EditContatoForm from './Forms/EditContatoForm';
 
 class Lista extends Component {
     constructor(props) {
@@ -72,7 +72,7 @@ class Lista extends Component {
         const { contatos } = this.state;
         return (
             <div className="container">
-                <h3 id="title">Contatos</h3>
+                <h3 id="title" style={{ marginLeft: '10px' }}>Contatos</h3>
                 <div className="row">
                     {
                         this.state.editing ? (
@@ -94,7 +94,7 @@ class Lista extends Component {
                     }
                     
                     <div className="col s12 l6">
-                        <h5>Contatos</h5>
+                        <h5>Lista</h5>
                         <TableContato contatos={contatos} editRow={this.editRow} deleteContato={this.deleteContato} />
                     </div>
                 </div>
